@@ -1,5 +1,5 @@
-(define (problem canopies_problem)
-(:domain canopies_domain)
+(define (problem vineyard_problem)
+(:domain vineyard_domain)
 (:objects
     rob - robot
     support0 - robot

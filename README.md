@@ -61,7 +61,7 @@ The script accepts some parameters. You can read the list of parameters by runni
 ```
 sentence_2_formula.py:
   --LANDMARKS_FILE: json file with landmarks
-    (default: 'canopies_landmarks.json')
+    (default: 'landmarks.json')
   --LOG_FILE: csv file where to write the results
     (default: 'results/result.csv')
   --RER_PROMPT_FILE: txt file containing the rer prompt
@@ -78,9 +78,9 @@ Here's the list of flags accepted by the script
 ```
 run_experiments.py:
   --DATASET: csv file containing sentences and target LTL formulas
-    (default: 'dataset/Canopies_DS_all_symbols.csv')
+    (default: 'dataset/DS_all_symbols.csv')
   --LANDMARKS_FILE: json file with landmarks
-    (default: 'canopies_landmarks.json')
+    (default: 'landmarks.json')
   --LOG_FILE: csv file where to write the results
     (default: 'results/result.csv')
   --RER_PROMPT_FILE: txt file containing the rer prompt
@@ -134,7 +134,7 @@ cd ../../
 python3 planning/prepare_gpt_inputs.py
 ```
 
-Since readers cannot test the system on real vineyards like the CANOPIES domain, we provided some scripts and tests that can executed to mimic the behaviour of the robot in the field (sas_plan_adapted).
+Since readers cannot test the system on real vineyards, we provided some scripts and tests that can executed to mimic the behaviour of the robot in the field (sas_plan_adapted).
 
 To mimic the interaction of the human asking questions about the robot's actions, run
 ```

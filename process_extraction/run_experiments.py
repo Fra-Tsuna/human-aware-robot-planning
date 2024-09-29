@@ -12,11 +12,11 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 # flags
 absl.flags.DEFINE_string(
     "DATASET",
-    "dataset/Canopies_DS_all_symbols.csv",
+    "dataset/DS_all_symbols.csv",
     "csv file containing sentences and target LTL formulas",
 )
 absl.flags.DEFINE_string(
-    "LANDMARKS_FILE", "canopies_landmarks.json", "json file with landmarks"
+    "LANDMARKS_FILE", "landmarks.json", "json file with landmarks"
 )
 absl.flags.DEFINE_string(
     "RER_PROMPT_FILE",

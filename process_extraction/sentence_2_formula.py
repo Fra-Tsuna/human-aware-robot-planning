@@ -5,7 +5,7 @@ import absl.flags
 # flags
 absl.flags.DEFINE_string("SENTENCE", "go to line 1", "Sentence to translate in LTL")
 absl.flags.DEFINE_string(
-    "LANDMARKS_FILE", "canopies_landmarks.json", "json file with landmarks"
+    "LANDMARKS_FILE", "landmarks.json", "json file with landmarks"
 )
 absl.flags.DEFINE_string(
     "RER_PROMPT_FILE",

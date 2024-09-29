@@ -1,4 +1,4 @@
-(define (domain canopies_domain)
+(define (domain vineyard_domain)
  (:requirements :typing :strips :non-deterministic)
  (:types location robot grape box)
  (:predicates (robot-at ?r - robot ?loc - location)
