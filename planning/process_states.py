@@ -180,7 +180,6 @@ def evaluate_metric(plan_so_far_returned, extracted_fluents, category):
             missing_list.append(len(real_states.difference(extracted_fluents)))
             hallucination_list.append(len(extracted_fluents.difference(real_states)))
             union_list.append(len(real_states.union(extracted_fluents)))
-            
             cumulative_plan.append(action)
             i += 1
         gamma = gamma_future / i
@@ -198,7 +197,7 @@ def evaluate_metric(plan_so_far_returned, extracted_fluents, category):
     return gamma, gammas, soundness, histogram, gt_states
 
 
-def simulate_plan(plan, question, question_probability=0.25):
+def simulate_plan(plan, question, question_probability=0.25, baseline=False):
     p = question_probability
     increment = (1 - p) / len(plan)
     plan_so_far = []
@@ -210,8 +209,12 @@ def simulate_plan(plan, question, question_probability=0.25):
 
         if random.random() < p:
             user_response = question
-            chat = GPTChat(**chat_kwargs)
-            system_response = chat(plan_so_far, user_response)
+            if not baseline:
+                chat = GPTChat(**chat_kwargs)
+                system_response = chat(plan_so_far, user_response)
+            else:
+                chat = NaiveBaseline()
+                system_response = chat(plan_so_far, user_response)
             break
         else:
             p += increment

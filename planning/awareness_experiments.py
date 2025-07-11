@@ -55,9 +55,10 @@ questions_dict = {
     "Future_actions": questions_third_set,
 }
 
+n_exp = 30
+baseline = True
 
-def main(n_exp: int = 30) -> None:
-    
+def main() -> None:
     extractor_kwargs = {"fluents": gt_fluents, "objects": gt_objects}
     extractor = FluentsExtractor(**extractor_kwargs)
 
@@ -74,7 +75,7 @@ def main(n_exp: int = 30) -> None:
         for i in range(n_exp):
             print(f"Experiment {i+1}")
             question = random.choice(questions)
-            system_response, psf_returned = simulate_plan(plan, question, 0.25)
+            system_response, psf_returned = simulate_plan(plan, question, 0.25, baseline)
             output_dir = f"{output_dir_}/experiment_{i+1}"
 
             if not os.path.exists(output_dir):
@@ -90,7 +91,7 @@ def main(n_exp: int = 30) -> None:
             results["system_response"] = system_response
             results["extracted_fluents"] = list(extracted_fluents)
             # results["gt_fluents"] = gt_fluents_in_states
-            results["gamma_average"] = gamma
+            results["completeness"] = gamma
             results["gammas"] = gammas
             results["soundness"] = soundness
             results["histogram"] = histogram

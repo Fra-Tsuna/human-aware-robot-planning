@@ -73,6 +73,36 @@ class GPTChat:
         return completion.choices[0].message.content.replace("\n", "")
 
 
+class NaiveBaseline:
+    def __init__(self, **kwargs):
+        self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+        self.model = "gpt-4o"
+        self.completion = None
+
+    def __call__(self, psf, message):
+        completion = self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {
+                    "role": "system",
+                    "content": f"You are an harvester robot in a vineyard.\
+                        Your goal is to describe me what you are doing \
+                        depending on what state you are. The description must be provided in terms of next action to do \
+                        and explanation of why you are doing it. Be very short when answering. Remember to describe next actions in natural language and not with their \
+                        PDDL name. Do not use technical IT terms that a farmer would not understand, like 'non-determinism'.",
+                },
+                {
+                    "role": "user",
+                    "content": f"So far you have executed the following actions of the policy: {psf}. {message}",
+                },
+            ],
+            stream=False,
+            temperature=1e-7,
+        )
+
+        return completion.choices[0].message.content.replace("\n", "")
+
+
 class FluentsExtractor:
     def __init__(self, **kwargs):
         self.fluents = kwargs["fluents"]
