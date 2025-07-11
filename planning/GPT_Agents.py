@@ -37,7 +37,7 @@ class GPTChat:
             messages=[
                 {
                     "role": "system",
-                    "content": f"You are an harvester robot in a vineyard for the 'CANOPIES' project. \
+                    "content": f"You are an harvester robot in a vineyard. \
                         The vineyard is formalised in PDDL. The domain file is {self.domain}. The problem file is {self.problem}. \
                         You act according to this policy {self.human_policy}. Your goal is to describe me what you are doing \
                         depending on what state you are. The description must be provided in terms of next action to do \
