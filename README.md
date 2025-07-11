@@ -3,10 +3,14 @@
 Combining LLMs and Symbolic Reasoning</h1>
 <div>
 
-About CANOPIES: https://canopies-project.eu/
+
 
 </div>
 </div>
+
+## Extra Material
+For a demonstration of our system in use, please check the video in the `assets` folder.
+For extra information about the CANOPIES project, check the following link: https://canopies-project.eu/
 
 ## Prerequisites
 Clone this repo and its submodule
