@@ -3,7 +3,7 @@
 Combining LLMs and Symbolic Reasoning</h1>
 <div>
 
-About CANOPIES: https://canopies-project.eu/)
+About CANOPIES: https://canopies-project.eu/
 
 </div>
 </div>
