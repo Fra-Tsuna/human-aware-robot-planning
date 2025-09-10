@@ -28,18 +28,14 @@ def main(n_exp: int = 30) -> None:
             completeness = results["completeness"]
             soundness_list.append(soundness)
             completeness_list.append(completeness)
-    
-        # with open(f"{result_dir}/results.txt", "w") as file:
-        #     for gamma in gammas_list:
-        #         file.write(f"{gamma}\n")
-                
+            
         completeness_average = np.mean(completeness_list)
         completeness_std = np.std(completeness_list)
         soundness_average = np.mean(soundness_list)
         soundness_std = np.std(soundness_list)
 
         print(f"Category: {category}\n")
-        print(f"Gamma statistics: {completeness_average:.2f} +- {completeness_std:.2f}\n")
+        print(f"Completeness statistics: {completeness_average:.2f} +- {completeness_std:.2f}\n")
         print(f"Soundness statistics: {soundness_average:.2f} +- {soundness_std:.2f}\n")
 
 

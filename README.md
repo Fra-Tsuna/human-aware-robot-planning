@@ -1,6 +1,5 @@
 <div align="center">
-<h1 style="font-size: 20px">Human-Robot Awareness in<br> Collaborative Scenarios &#x1F347; <br> 
-Combining LLMs and Symbolic Reasoning</h1>
+<h1 style="font-size: 30px">Defining and Monitoring Complex Robot Activitie via LLMs and Symbolic Reasoning</h1>
 <div>
 
 
@@ -9,8 +8,7 @@ Combining LLMs and Symbolic Reasoning</h1>
 </div>
 
 ## Extra Material
-For a demonstration of our system in use in the simulation scenario of a real-life agricultural use case (anonimized 
-to respect the submission guidelines), please check the video in the `assets` folder.
+For a demonstration of our system in use in the simulation scenario of a real-life agricultural use case, please check the video in the `assets` folder.
 
 ## Prerequisites
 Clone this repo and its submodule
@@ -150,7 +148,7 @@ python3 planning/plan_simulation.py
 ```
 The user has a window of 10 seconds after every robot action to make any kind of questions to the system and observe its response.
 
-To reproduce the experiments of the paper on the awareness, run
+To reproduce the experiments of the paper, run
 ```
 python3 planning/awareness_experiments.py --n_exp 30
 ```
